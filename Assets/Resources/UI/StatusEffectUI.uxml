@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="StatusEffect" style="align-items: flex-start; justify-content: space-around; margin-left: 0; margin-right: 2px; margin-top: 0; margin-bottom: 2px;">
+        <ui:Label text="Label" display-tooltip-when-elided="true" style="align-items: stretch; -unity-text-align: upper-center; padding-right: 0; padding-left: 0; padding-top: 5px; padding-bottom: 5px; -unity-font: resource(&apos;UI/LuckiestGuy&apos;); -unity-font-style: bold; -unity-text-outline-width: 3px; -unity-text-outline-color: rgb(5, 5, 5); text-shadow: 0 0 0 rgb(17, 17, 17); letter-spacing: 1px; font-size: 18px; color: rgb(238, 238, 238); -unity-font-definition: initial; width: 70px; display: none;" />
+        <ui:VisualElement name="Image" style="width: 30px; height: 30px;">
+            <ui:VisualElement name="Icon" style="height: 100%; width: 100%; background-color: rgba(202, 202, 202, 0);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

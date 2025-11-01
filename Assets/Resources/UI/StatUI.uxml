@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/TextStyle.uss?fileID=7433441132597879392&amp;guid=e82a9d6cb9f364bd9a117466a85311a7&amp;type=3#TextStyle" />
+    <ui:VisualElement name="StatContainer" style="flex-direction: row; flex-grow: 0; justify-content: space-between; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; -unity-text-align: middle-left; align-items: center;">
+        <ui:Label text="Kills" display-tooltip-when-elided="true" name="StatName" class="TextStyle" />
+        <ui:Label text="8" display-tooltip-when-elided="true" name="StatValue" class="TextStyle" />
+    </ui:VisualElement>
+</ui:UXML>
