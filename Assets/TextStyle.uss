@@ -1,0 +1,20 @@
+.TextStyle {
+    align-items: stretch;
+    -unity-text-align: upper-center;
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    -unity-font: resource('UI/LuckiestGuy');
+    -unity-font-style: bold;
+    -unity-text-outline-width: 0.8px;
+    -unity-text-outline-color: rgb(5, 5, 5);
+    text-shadow: 1.2px 1.2px 0.5px rgb(17, 17, 17);
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: rgb(238, 238, 238);
+    -unity-font-definition: initial;
+    display: flex;
+    -unity-paragraph-spacing: 0;
+    word-spacing: 0;
+}
