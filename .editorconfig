@@ -1,0 +1,7 @@
+[*.cs]
+
+# Default severity for all analyzer diagnostics
+dotnet_analyzer_diagnostic.severity = suggestion
+
+# IDE0040: Add accessibility modifiers
+dotnet_diagnostic.IDE0040.severity = none

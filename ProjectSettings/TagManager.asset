@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - FxTemporaire
+  - Ground
+  - Drops
+  - Pickupable
+  - SpawnPoint
+  - LobbySpot
+  - LobbyPillar
+  - PlayerTank
+  - Destructible
+  - Destructable
+  - Laser
+  - Spawned
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Pickupables
+  - Water
+  - UI
+  - Player
+  - IgnorePlayer
+  - Flames
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
