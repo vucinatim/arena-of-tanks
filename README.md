@@ -1,39 +1,54 @@
-# Tank Wars Unity Project
+# Arena of Tanks (Tank Wars)
 
-This is a Unity game project for Tank Wars.
+A Unity multiplayer tank battle game with AirConsole integration.
 
-## Project Information
+---
 
-- **Unity Version**: See `ProjectSettings/ProjectVersion.txt`
-- **Repository Size**: ~2.8GB (Assets folder)
-- **Last Updated**: See git commit history
+## 🎮 How to Restore/Open This Project
 
-## How to Restore/Continue Development
+### Requirements
+- **Unity Version**: `2021.3.24f1` (LTS)
+  - Download from: https://unity.com/releases/editor/archive
+  - Must use this exact version or a compatible 2021.3.x version
+- **Unity Hub** (recommended for version management)
 
-1. **Clone the repository** (if not already local):
+### Step-by-Step Instructions
+
+1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd tank-wars
+   git clone https://github.com/vucinatim/arena-of-tanks.git
+   cd arena-of-tanks
    ```
 
-2. **Open in Unity**:
-   - Launch Unity Hub
-   - Click "Open" or "Add"
-   - Select the `tank-wars` folder
-   - Unity will automatically:
-     - Detect the project version
-     - Reimport all assets
-     - Regenerate the `Library/` folder (this will take time)
-     - Restore packages from `Packages/manifest.json`
+2. **Install Unity 2021.3.24f1**:
+   - Open Unity Hub
+   - Go to "Installs" tab
+   - Click "Install Editor" → "Archive" → Find `2021.3.24f1`
+   - Install with WebGL Build Support (optional but recommended)
 
-3. **Wait for Unity to finish importing**:
-   - The first time you open the project, Unity will regenerate the `Library/` folder
-   - This is normal and expected - the `Library/` folder is intentionally excluded from git
-   - Import progress can be monitored in the Unity Editor's bottom status bar
+3. **Open the project in Unity**:
+   - In Unity Hub, click "Open" or "Add"
+   - Navigate to and select the cloned `arena-of-tanks` folder
+   - Unity Hub should show "Unity 2021.3.24f1" next to the project
+   - Click on the project to open it
 
-4. **Build configuration**:
-   - The project appears to be configured for WebGL builds (see `tank-wars/` folder)
-   - AirConsole integration is included for controller support
+4. **First-time setup** (automatic):
+   - Unity will take **5-10 minutes** to:
+     - Import all assets (~2.8GB)
+     - Regenerate the `Library/` folder (~6GB)
+     - Download and install packages from `Packages/manifest.json`
+     - Compile C# scripts
+   - **Do not interrupt this process!**
+   - Progress is shown in the Unity Editor's bottom-right status bar
+
+5. **Verify the project loaded correctly**:
+   - Check the Project window - you should see the `Assets/` folder structure
+   - Try opening a scene: `Assets/Scenes/MainScene.unity` (or similar)
+   - Press Play to test if the game runs
+
+### Build Information
+- **Platform**: WebGL (with AirConsole controller support)
+- **Build Output**: `tank-wars/` folder contains WebGL build files
 
 ## What's Included in Git
 
