@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="CountdownContainer" style="position: absolute; left: 0; top: 1px; right: 0; bottom: -1px; align-items: center; justify-content: center;">
+        <ui:Label text="3" display-tooltip-when-elided="true" name="CountdownTimerLabel" style="-unity-text-align: upper-center; -unity-font-style: bold; color: rgb(255, 255, 255); font-size: 46px; -unity-font: resource(&apos;UI/LuckiestGuy&apos;); -unity-font-definition: initial; -unity-text-outline-width: 2.5px; padding-left: 2px; padding-top: 6px; padding-bottom: 6px; position: relative; left: auto; top: auto; -unity-text-outline-color: rgba(0, 0, 0, 255);" />
+    </ui:VisualElement>
+</ui:UXML>

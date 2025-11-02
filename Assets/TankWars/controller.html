@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- AirConsole API -->
+    <script src="https://www.airconsole.com/api/airconsole-1.8.0.js"></script>
+
+    <!-- Alpine.js for reactivity -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- TailwindCSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/ff4e251713.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- App's JavaScript -->
+    <script defer>
+      document.addEventListener("alpine:init", () => {
+        Alpine.store("game", {
+          airconsole: null,
+          currentView: "LobbyAndSelection",
+          playerReady: false,
+
+          init() {
+            this.airconsole = new AirConsole({ orientation: "landscape" });
+            this.setupListeners();
+
+            // Define a button component globally
+            Alpine.data(
+              "buttonComponent",
+              (
+                actionType,
+                downAction = null,
+                upAction = null,
+                vibrationDuration = null
+              ) => ({
+                init() {
+                  const gameStore = Alpine.store("game");
+
+                  const handleDown = (e) => {
+                    e.preventDefault();
+                    if (downAction !== null) {
+                      gameStore.sendMessage(actionType, downAction);
+
+                      // Trigger vibration if supported
+                      if (vibrationDuration && navigator.vibrate) {
+                        navigator.vibrate(vibrationDuration);
+                      }
+                    }
+                  };
+
+                  const handleUp = (e) => {
+                    e.preventDefault();
+                    if (upAction !== null) {
+                      gameStore.sendMessage(actionType, upAction);
+                    }
+                  };
+
+                  // Attach touch event listeners
+                  if ("ontouchstart" in document.createElement("div")) {
+                    this.$el.addEventListener("touchstart", handleDown);
+                    this.$el.addEventListener("touchend", handleUp);
+                  } else {
+                    // Attach mouse event listeners as a fallback
+                    this.$el.addEventListener("mousedown", handleDown);
+                    this.$el.addEventListener("mouseup", handleUp);
+                  }
+
+                  // Cleanup listeners when the component is destroyed
+                  this.$watch("destroyed", () => {
+                    if ("ontouchstart" in document.createElement("div")) {
+                      this.$el.removeEventListener("touchstart", handleDown);
+                      this.$el.removeEventListener("touchend", handleUp);
+                    } else {
+                      this.$el.removeEventListener("mousedown", handleDown);
+                      this.$el.removeEventListener("mouseup", handleUp);
+                    }
+                  });
+                },
+              })
+            );
+          },
+
+          setupListeners() {
+            this.airconsole.onMessage = (from, data) => {
+              console.log("onMessage", from, data);
+            };
+
+            this.airconsole.onReady = (code) => {
+              console.log("onReady", code);
+            };
+
+            this.airconsole.onCustomDeviceStateChange = (
+              device_id,
+              device_data
+            ) => {
+              console.log("onCustomDeviceStateChange", device_id, device_data);
+              if (device_id === AirConsole.SCREEN && device_data.gameState) {
+                this.currentView = device_data.gameState;
+              }
+
+              if (
+                device_id === AirConsole.SCREEN &&
+                device_data.playerReadyStates
+              ) {
+                let amIReady =
+                  device_data.playerReadyStates[this.airconsole.device_id] ||
+                  false;
+                this.playerReady = amIReady;
+              }
+            };
+          },
+
+          sendMessage(actionType, action) {
+            this.airconsole.message(AirConsole.SCREEN, {
+              actionType: actionType,
+              action: action,
+            });
+          },
+
+          // Common button classes
+          buttonClasses:
+            "bg-slate-400/20 h-full grow border border-white flex items-center justify-center rounded-2xl text-xl font-semibold text-white active:brightness-75",
+        });
+      });
+    </script>
+  </head>
+
+  <body class="bg-red-400" x-data="Alpine.store('game')" x-init="init()">
+    <!-- Lobby and Selection View -->
+    <div x-show="currentView === 'LobbyAndSelection'" class="h-screen relative">
+      <div
+        class="absolute inset-0 p-5 bg-gray-800 flex justify-center items-center gap-3"
+      >
+        <div
+          x-data="buttonComponent('ready-player', playerReady ? 'not-ready' : 'ready', null, 1)"
+          :class="playerReady ? 'bg-red-500' : 'bg-green-500'"
+          class="w-4/5 rounded-xl flex justify-center items-center text-2xl py-12 border border-white active:brightness-75 font-semibold text-white"
+        >
+          <span x-text="playerReady ? 'UNREADY' : 'READY'"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gameplay View -->
+    <div x-show="currentView === 'Gameplay'" class="h-screen relative">
+      <div class="absolute inset-0 p-5 bg-gray-800 grid grid-cols-3 gap-3">
+        <!-- Controls -->
+        <div class="grid grid-cols-2 gap-3">
+          <div
+            x-data="buttonComponent('control', 'left', 'left-up', 1)"
+            :class="buttonClasses"
+          >
+            <i class="fa-solid fa-2x fa-arrow-left"></i>
+          </div>
+          <div
+            x-data="buttonComponent('control', 'right', 'right-up', 1)"
+            :class="buttonClasses"
+          >
+            <i class="fa-solid fa-2x fa-arrow-right"></i>
+          </div>
+        </div>
+        <div
+          x-data="buttonComponent('control', 'ability', 'ability-up', 10)"
+          :class="buttonClasses"
+          class="bg-red-400"
+        >
+          <i class="fa-solid fa-2x fa-bolt"></i>
+        </div>
+        <div class="flex flex-col gap-3 grow">
+          <div
+            x-data="buttonComponent('control', 'up', 'up-up', 1)"
+            :class="buttonClasses"
+          >
+            <i class="fa-solid fa-2x fa-arrow-up"></i>
+          </div>
+          <div
+            x-data="buttonComponent('control', 'down', 'down-up', 1)"
+            :class="buttonClasses"
+          >
+            <i class="fa-solid fa-2x fa-arrow-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

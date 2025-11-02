@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24c70beb805954d6b93397e9e59bed19, type: 3}
+  m_Name: DashAbility
+  m_EditorClassIdentifier: 
+  pickupableName: Dash
+  pickupableIcon: {fileID: 21300000, guid: 787996f6d0ee34bfa83b78a757bfa4f7, type: 3}
+  pickupableVisual: {fileID: 0}
+  rarityType: 2
+  name: Dash
+  abilityIcon: {fileID: 21300000, guid: 787996f6d0ee34bfa83b78a757bfa4f7, type: 3}
+  activateSound: {fileID: 8300000, guid: abb15fafc7644477fa25d09657c9e6a7, type: 3}
+  activeSound: {fileID: 0}
+  deactivateSound: {fileID: 0}
+  activeTime: 0
+  afterImagePrefab: {fileID: 1638703931344111047, guid: 655eb6235ab8344f5aead366513ebfaf, type: 3}
+  dashSpeed: 20
+  dashDuration: 0.1
+  afterImageSpawnRate: 0.02
+  afterImageLifetime: 0.2

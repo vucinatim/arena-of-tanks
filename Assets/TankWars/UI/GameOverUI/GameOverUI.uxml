@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement style="height: 100%; justify-content: flex-start;">
+        <ui:VisualElement name="Container" style="height: auto; justify-content: space-around;">
+            <ui:VisualElement name="GameOverUI" style="display: none; align-items: stretch;">
+                <ui:Label text="Game Over" display-tooltip-when-elided="true" name="MainTitle" style="-unity-text-align: upper-center; -unity-font-style: bold; color: rgb(255, 255, 255); font-size: 25px; -unity-font: resource(&apos;UI/LuckiestGuy&apos;); -unity-font-definition: initial; -unity-text-outline-width: 3px; padding-left: 2px; padding-top: 6px; padding-bottom: 6px;" />
+                <ui:VisualElement name="Content" style="flex-direction: row; justify-content: center;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c4cf5b8be296a48a11b466285a8c7e, type: 3}
+  m_Name: MissileAbility
+  m_EditorClassIdentifier: 
+  pickupableName: Missile
+  pickupableIcon: {fileID: 21300000, guid: adbf0e5db384648208414bd24b5efc91, type: 3}
+  pickupableVisual: {fileID: 0}
+  rarityType: 1
+  name: Missile
+  abilityIcon: {fileID: 21300000, guid: adbf0e5db384648208414bd24b5efc91, type: 3}
+  activateSound: {fileID: 8300000, guid: 33c2ba5ada8fb4938b46635df8ba20dd, type: 3}
+  activeSound: {fileID: 0}
+  deactivateSound: {fileID: 8300000, guid: d5d7a1138be054460b8d74f2515c2308, type: 3}
+  activeTime: 2
+  projectilePrefab: {fileID: 7090710131271465290, guid: 496fe077a3af9b0428f18eae40df0235, type: 3}
+  fxPrefab: {fileID: 2433282508537954060, guid: 1abb3c3bdb13742b19e6ab71d4011126, type: 3}
+  projectileSpeed: 50
+  blastRadius: 10
+  minDamage: 10
+  maxDamage: 80
+  knockbackForce: 500

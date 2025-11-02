@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb8f536d66bf4402b3d95dd1d8c3741, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  playerName: Player
+  playerIcon: {fileID: 2800000, guid: 7880c2c6c2772ca4dbf267146591adf5, type: 3}
+  playerRenderTexture: {fileID: 8400000, guid: 2618200e6f57745dba9c2992429df840, type: 2}
+  corpsePrefab: {fileID: 2235895608799552596, guid: 370213f508a8541199878a2feda29da2, type: 3}
+  abilityQueueData:
+    abilityCount: 3
+    abilities:
+    - {fileID: 11400000, guid: d613ede42907c7c4fb71e92a0a00bedf, type: 2}
+    - {fileID: 11400000, guid: 9db8cab06529db34a82d49c43592edff, type: 2}
+    - {fileID: 11400000, guid: 9db8cab06529db34a82d49c43592edff, type: 2}
+  controlsData:
+    useAirConsoleInput: 1
+  healthData:
+    health: 100
+  livesData:
+    lives: 2
+    reborns: 0
+  movementData:
+    maxSpeed: 20
+    movementAcceleration: 800
+    rotationSpeed: 3
+    suspensionForce: 2000
+    suspensionDamp: 100
+    restDistance: 1
+    weightTransferSpeed: 20
+    weightTransferAmount: 150
+    weightTransferResetTime: 0.5
+    wheelRotationSpeed: 1000
+  statusEffectsData:
+    isEffectable: 1
+  tankAnimationData:
+    animationDuration: 2
+    animationIntesity: 10
+    wheelRotationSpeed: 30

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed61ae8df1124729a335bf075428d4c, type: 3}
+  m_Name: MineAbility
+  m_EditorClassIdentifier: 
+  pickupableName: Mine
+  pickupableIcon: {fileID: 21300000, guid: 3c95b263ae5fb4bbb82d4fc43e8ad24e, type: 3}
+  pickupableVisual: {fileID: 0}
+  rarityType: 0
+  name: Mine
+  abilityIcon: {fileID: 21300000, guid: 3c95b263ae5fb4bbb82d4fc43e8ad24e, type: 3}
+  activateSound: {fileID: 8300000, guid: 16c90e47689774431b9e3a72103c80d6, type: 3}
+  activeSound: {fileID: 0}
+  deactivateSound: {fileID: 0}
+  activeTime: 0
+  minePrefab: {fileID: 8314945414142991816, guid: a68ac569ca19b4a38b56edadae26521c, type: 3}
+  fxPrefab: {fileID: 358637981425055526, guid: ad274fcb0ff6a4158ab87239b99bebea, type: 3}
+  damage: 60
+  explodeSound: {fileID: 8300000, guid: 23ddbbed03d66473a896fa2269279ec7, type: 3}
